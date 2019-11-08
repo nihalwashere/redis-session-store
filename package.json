@@ -1,0 +1,71 @@
+{
+  "name": "redis-playground",
+  "version": "1.0.0",
+  "description": "Playing aroud with Redis!",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest ./tests --runInBand",
+    "start": "node -r dotenv/config server.js dotenv_config_path=./env/prod.env",
+    "start:local": "node -r dotenv/config server.js dotenv_config_path=./env/local.env",
+    "docker-up": "docker-compose up -d",
+    "docker-down": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nihal9ns/redis-session-store.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.js",
+    "GraphQL",
+    "Backend"
+  ],
+  "author": "Nihal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nihal9ns/redis-session-store/issues"
+  },
+  "homepage": "https://github.com/nihal9ns/redis-session-store#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "graphql-errors": "^2.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.6",
+    "morgan": "^1.9.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "echo PUSHING NOW!!!"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

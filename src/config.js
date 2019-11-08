@@ -1,0 +1,5 @@
+module.exports = {
+  EXPIRE_IN_SECONDS: 12 * 60 * 60,
+  EXPIRE_IN_HOURS: "12h",
+  JWT_SIGNING_ALGORITHM: "RS256" // RSA [ "RS256", "RS384", "RS512" ]
+};
