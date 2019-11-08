@@ -37,7 +37,7 @@ To create the signature part you have to take the encoded header, the encoded pa
 
 Therefore, a JWT typically looks like the following.
 
-xxxxx.yyyyy.zzzzz
+```xxxxx.yyyyy.zzzzz```
 
 ## Implementation
 
